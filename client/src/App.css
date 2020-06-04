@@ -1,0 +1,423 @@
+@font-face {
+  font-family: "lobster";
+  src: url("./fonts/Lobster/Lobster-Regular.ttf") format("woff");
+}
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto/Roboto-Regular.ttf") format("woff");
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: roboto;
+}
+
+.primary-color {
+  color: orange;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: 1.5px solid orange;
+  color: white;
+  /* box-shadow: 0px 0px 5px 1px #313131; */
+}
+
+.navbar-brand {
+  font-family: lobster;
+  font-size: 26px;
+  color: #313131;
+}
+
+.navbar-brand:hover {
+  color: #313131;
+}
+
+.navbar-toggler {
+  border: 1px solid orange;
+}
+
+.show li {
+  padding: 10px;
+  width: fit-content;
+}
+
+.navbar-toggler-icon {
+  color: orange;
+}
+
+.home-icon {
+  color: orange;
+  font-size: 24px;
+  padding-top: 2px;
+}
+
+.home-icon:hover {
+  color: #313131;
+}
+
+.navbar li a {
+  color: #313131;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.selected {
+  color: #313131;
+}
+
+.navbar li a:hover {
+  color: #313131;
+}
+
+.navbar .profile-nav {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid orange;
+}
+
+.navbar .profile-nav:hover {
+  border: 2px solid #313131;
+}
+
+.card-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.Login-card {
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  margin: 80px auto 5px auto;
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+.Login-card .card-title {
+  font-size: 48px;
+  font-family: lobster;
+  color: black;
+}
+
+.Login-card input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0;
+  border-bottom: 1px solid orange;
+  outline: 0;
+}
+.Login-card input::placeholder {
+  color: rgba(185, 185, 185, 0.575);
+}
+
+.forget a {
+  color: #313131;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Login-card button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  margin-top: 10px;
+}
+
+.Login-card button:hover {
+  background-color: #313131;
+}
+
+hr {
+  background-color: orange;
+  max-width: 200px;
+  margin: 30px auto 20px auto;
+}
+
+.Login-Signup {
+  padding-top: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+.Login-Signup .new-account {
+  color: #313131;
+  font-size: 16px;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.Login-Signup .new-account span {
+  font-weight: 600;
+}
+
+.Login-Signup .new-account a:hover {
+  text-decoration: none;
+}
+
+.forget a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.Login-card .policy {
+  color: #9e9e9e;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.Login-card .policy span {
+  color: #9c9c9c;
+  font-weight: 500;
+}
+
+.Toastify__toast {
+  margin-top: 60px;
+}
+
+.Toastify__progress-bar--default {
+  background: orange;
+}
+
+.profile {
+  max-width: 900px;
+}
+
+.profile .row {
+  text-align: center;
+}
+
+.profile .info {
+  margin-top: 50px;
+  border-bottom: 1px solid orange;
+  padding-bottom: 20px;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid orange;
+  margin-bottom: 30px;
+}
+
+.image {
+  display: flex;
+  justify-content: space-around;
+  margin: 18px 0px;
+}
+
+.profile .counts {
+  margin-top: 40px;
+}
+
+.profile .gallery h4 {
+  font-family: lobster;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.profile .gallery .post img {
+  width: 280px;
+}
+
+.profile .gallery .post {
+  margin-bottom: 20px;
+}
+
+.home {
+  margin: 30px auto;
+}
+
+.home .col-md-7 {
+  padding: 0;
+}
+
+.home-card {
+  height: max-content;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.home .user-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid orange;
+  margin-right: 10px;
+}
+
+.home-card img {
+  width: 700;
+  display: inline-block;
+  border-radius: 0;
+}
+
+.home-card .card-title {
+  padding: 10px 0px 0px 10px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.home-card .card-body {
+  padding: 0;
+}
+
+.home-card .like {
+  color: red;
+  margin: 20px 20px;
+  font-size: 24px;
+}
+
+.home-card .card-subtitle {
+  margin: 20px 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.home-card .card-text {
+  margin: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.home-card input {
+  width: 92%;
+  padding: 5px;
+  margin: 0px 0px 30px 20px;
+  position: relative;
+  border: 0;
+  border-bottom: 1.5px solid orange;
+  outline: 0;
+}
+.home-card input::placeholder {
+  color: rgba(185, 185, 185, 0.575);
+}
+
+.trending {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.trending h4 {
+  width: 100%;
+  border-bottom: 1.5px solid orange;
+  padding-bottom: 15px;
+  font-family: lobster;
+}
+
+.trending ul {
+  padding-inline-start: 25px;
+  line-height: 0.5;
+}
+
+.trending li {
+  color: orange;
+}
+
+.trending li span {
+  font-size: 12px;
+  color: #474747;
+}
+
+.trending .footer {
+  color: #818181;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.new {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.new-post {
+  margin: 0px auto;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px 30px 20px 30px;
+  border: 1.5px solid orange;
+  border-radius: 10px;
+}
+
+.new-post-title {
+  margin: 30px auto 10px auto;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1.5px solid orange;
+  border-radius: 10px;
+  text-align: center;
+  font-family: lobster;
+}
+
+.new-post label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.new-post input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0;
+  border-bottom: 1px solid orange;
+  outline: 0;
+  border-radius: 0;
+}
+.new-post input::placeholder {
+  color: rgba(185, 185, 185, 0.575);
+}
+/* 
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: orange;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #313131;
+} */
+
+.new-post i {
+  padding-right: 5px;
+}
+
+.new-post button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.new-post button:hover {
+  background-color: #313131;
+}
