@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Card, CardBody, CardTitle, Button } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Signin = (props) => {
+  const { state, dispatch } = useContext(UserContext);
   const history = useHistory();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -37,7 +39,7 @@ const Signin = (props) => {
         } else {
           localStorage.setItem("jwt", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
-          // dispatch({type:"USER",payload:data.user})
+          dispatch({ type: "USER", payload: data.user });
           toast.success("👾 Welcome Back! 🚀", {
             position: "bottom-center",
             autoClose: 3000,
