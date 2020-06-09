@@ -85,7 +85,7 @@ const Signup = (props) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             type="password"
             required

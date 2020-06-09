@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Card,
   CardImg,
@@ -6,38 +6,55 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
-  input,
   Container,
 } from "reactstrap";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("/allpost", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setData(result.posts);
+      });
+  }, []);
+
   return (
     <div className="home">
       <Container>
         <div className="row">
-          <Card className="home-card col-md-7 offset-1">
-            <CardBody>
-              <CardTitle>
-                <img
-                  className="user-pic"
-                  src="https://images.unsplash.com/photo-1570483133451-ddc0616200d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                />
-                Kate Watson
-              </CardTitle>
-              <CardImg
-                className="home-card-img"
-                src="https://images.unsplash.com/photo-1560461396-41fd0b4f711c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="post"
-              />
-              <div className="like">
-                <i className="fa fa-heart"></i>
-              </div>
-              <CardSubtitle>Title</CardSubtitle>
-              <CardText>This is amazing</CardText>
-              <input type="text" placeholder="Comment" />
-            </CardBody>
-          </Card>
+          {data.map((item) => {
+            return (
+              <Card className="home-card col-md-7 offset-1" key={item._id}>
+                <CardBody>
+                  <CardTitle>
+                    <img
+                      className="user-pic"
+                      src="https://images.unsplash.com/photo-1570483133451-ddc0616200d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                    />
+                    {item.postedBy.name}
+                  </CardTitle>
+                  <CardImg
+                    className="home-card-img"
+                    src={item.photo}
+                    alt="post"
+                  />
+                  <div className="like">
+                    <i className="fa fa-heart"></i>
+                  </div>
+                  <CardSubtitle>{item.title}</CardSubtitle>
+                  <CardText>{item.body}</CardText>
+                  <input type="text" placeholder="Comment" />
+                </CardBody>
+              </Card>
+            );
+          })}
+
           <div className="trending col-md-3">
             <h4>
               <span className="primary-color">Tren</span>ding
@@ -75,50 +92,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <Card className="home-card col-md-7 offset-1">
-            <CardBody>
-              <CardTitle>
-                <img
-                  className="user-pic"
-                  src="https://images.unsplash.com/photo-1570483133451-ddc0616200d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                />
-                Kate Watson
-              </CardTitle>
-              <CardImg
-                className="home-card-img"
-                src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="post"
-              />
-              <div className="like">
-                <i className="fa fa-heart"></i>
-              </div>
-              <CardSubtitle>Title</CardSubtitle>
-              <CardText>This is amazing</CardText>
-              <input type="text" placeholder="Comment" />
-            </CardBody>
-          </Card>
-          <Card className="home-card col-md-7 offset-1">
-            <CardBody>
-              <CardTitle>
-                <img
-                  className="user-pic"
-                  src="https://images.unsplash.com/photo-1570483133451-ddc0616200d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                />
-                Kate Watson
-              </CardTitle>
-              <CardImg
-                className="home-card-img"
-                src="https://images.unsplash.com/photo-1577375729078-820d5283031c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="post"
-              />
-              <div className="like">
-                <i className="fa fa-heart"></i>
-              </div>
-              <CardSubtitle>Title</CardSubtitle>
-              <CardText>This is amazing</CardText>
-              <input type="text" placeholder="Comment" />
-            </CardBody>
-          </Card>
         </div>
       </Container>
     </div>

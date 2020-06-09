@@ -8,16 +8,18 @@ import {
   NavItem,
   Container,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { UserContext } from "../App";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = (props) => {
   const { state, dispatch } = useContext(UserContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const history = useHistory();
 
   const renderList = () => {
-    console.log("da5alt");
     if (state) {
       return [
         <NavItem>
@@ -39,7 +41,23 @@ const NavBar = (props) => {
           </Link>
         </NavItem>,
         <NavItem>
-          <Link to="/">
+          <Link
+            onClick={() => {
+              localStorage.clear();
+              dispatch({ type: "CLEAR" });
+              history.push("/signin");
+              Redirect("/signin");
+              toast.dark("👾 You haved Logged Out, Bye! 👋", {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+              });
+            }}
+          >
             <i className="fas fa-sign-out-alt home-icon"></i>
           </Link>
         </NavItem>,
