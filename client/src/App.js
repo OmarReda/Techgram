@@ -44,14 +44,73 @@ const Routing = () => {
   );
 };
 function App() {
+  const [darkMode, setDarkMode] = React.useState(getInitialMode());
+  React.useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getInitialMode() {
+    const isReturningUser = "dark" in localStorage;
+    const savedMode = JSON.parse(localStorage.getItem("dark"));
+    const userPrefersDark = getPrefColorScheme();
+    // if mode was saved --> dark / light
+    if (isReturningUser) {
+      return savedMode;
+      // if preferred color scheme is dark --> dark
+    } else if (userPrefersDark) {
+      return true;
+      // otherwise --> light
+    } else {
+      return false;
+    }
+    // return savedMode || false;
+  }
+
+  function getPrefColorScheme() {
+    if (!window.matchMedia) return;
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <UserContext.Provider value={{ state, dispatch }}>
-      <BrowserRouter>
-        <NavBar />
-        <Routing />
-      </BrowserRouter>
-    </UserContext.Provider>
+    <div className={darkMode ? "dark-mode" : "light-mode"}>
+      <UserContext.Provider value={{ state, dispatch }}>
+        <BrowserRouter>
+          <NavBar />
+          <div className="toggle-container">
+            <div className="toggle-btn">
+              <label class="fancy-checkbox">
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  checked={darkMode}
+                  onChange={() => setDarkMode((prevMode) => !prevMode)}
+                />
+                <i
+                  class="fas fa-sun unchecked"
+                  style={{
+                    fontSize: "26px",
+                    paddingTop: "6px",
+                    cursor: "pointer",
+                    color: "white",
+                  }}
+                ></i>
+                <i
+                  class="fas fa-moon checked"
+                  style={{
+                    fontSize: "26px",
+                    paddingTop: "6px",
+                    color: "rgb(19,19,19)",
+                  }}
+                ></i>
+              </label>
+            </div>
+          </div>
+          <Routing />
+        </BrowserRouter>
+      </UserContext.Provider>
+    </div>
   );
 }
 

@@ -55,16 +55,16 @@ const Profile = () => {
           {mypics.map((item) => {
             return (
               <div className="col-md-4 post">
-                <div class="content-overlay"></div>
+                <div className="content-overlay"></div>
                 <img
                   className="gallery-img content-image"
                   key={item._id}
                   src={item.photo}
                   alt={item.title}
                 />
-                <div class="content-details fadeIn-bottom">
-                  <h3 class="content-title">{item.title}</h3>
-                  <p class="content-text">{item._id}</p>
+                <div className="content-details fadeIn-bottom">
+                  <h3 className="content-title">{item.title}</h3>
+                  <p className="content-text">{item._id}</p>
                 </div>
               </div>
             );
