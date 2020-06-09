@@ -19,7 +19,6 @@ const Routing = () => {
 
     if (user) {
       dispatch({ type: "USER", payload: user });
-      history.push("/");
     } else {
       history.push("/signin");
     }

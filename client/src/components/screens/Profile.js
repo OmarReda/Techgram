@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../App";
 
 const Profile = () => {
+  const [mypics, setPics] = useState([]);
+  const { state, dispatch } = useContext(UserContext);
+
+  useEffect(() => {
+    fetch("/mypost", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setPics(result.mypost);
+      });
+  }, []);
+
   return (
     <div className="profile container">
       <div className="row info">
@@ -11,11 +27,11 @@ const Profile = () => {
           />
         </div>
         <div className="col-md-8">
-          <h3>Kate Watson</h3>
+          <h3>{state ? state.name : "loading"}</h3>
           <div className="row counts">
             <div className="col-md-4">
               <h5>
-                <span className="primary-color">5</span> Posts
+                <span className="primary-color">{mypics.length}</span> Posts
               </h5>
             </div>
             <div className="col-md-4">
@@ -36,21 +52,13 @@ const Profile = () => {
           <span className="primary-color">Gall</span>ery
         </h4>
         <div className="row">
-          <div className="col-md-4 post">
-            <img src="https://images.unsplash.com/photo-1560461396-41fd0b4f711c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-          </div>
-          <div className="col-md-4 post">
-            <img src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-          </div>
-          <div className="col-md-4 post">
-            <img src="https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-          </div>
-          <div className="col-md-4 post">
-            <img src="https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-          </div>
-          <div className="col-md-4 post">
-            <img src="https://images.unsplash.com/photo-1577375729078-820d5283031c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-          </div>
+          {mypics.map((item) => {
+            return (
+              <div className="col-md-4 post">
+                <img key={item._id} src={item.photo} alt={item.title} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
