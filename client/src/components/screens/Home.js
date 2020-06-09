@@ -30,12 +30,12 @@ const Home = () => {
         <div className="row">
           {data.map((item) => {
             return (
-              <Card className="home-card col-md-7 offset-1" key={item._id}>
+              <Card className="home-card col-md-7 offset-md-1" key={item._id}>
                 <CardBody>
                   <CardTitle>
                     <img
                       className="user-pic"
-                      src="https://images.unsplash.com/photo-1570483133451-ddc0616200d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                      src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     />
                     {item.postedBy.name}
                   </CardTitle>

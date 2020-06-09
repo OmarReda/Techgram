@@ -23,7 +23,7 @@ const Profile = () => {
         <div className="col-md-4">
           <img
             className="profile-pic"
-            src="https://images.unsplash.com/photo-1570483133451-ddc0616200d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
           />
         </div>
         <div className="col-md-8">
@@ -55,7 +55,17 @@ const Profile = () => {
           {mypics.map((item) => {
             return (
               <div className="col-md-4 post">
-                <img key={item._id} src={item.photo} alt={item.title} />
+                <div class="content-overlay"></div>
+                <img
+                  className="gallery-img content-image"
+                  key={item._id}
+                  src={item.photo}
+                  alt={item.title}
+                />
+                <div class="content-details fadeIn-bottom">
+                  <h3 class="content-title">{item.title}</h3>
+                  <p class="content-text">{item._id}</p>
+                </div>
               </div>
             );
           })}

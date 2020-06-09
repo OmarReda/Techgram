@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Input, FormText } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
