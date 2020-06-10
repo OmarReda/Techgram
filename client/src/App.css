@@ -312,7 +312,6 @@ hr {
 
 .home-card {
   height: max-content;
-  display: inline-block;
   margin-bottom: 20px;
 }
 
@@ -385,7 +384,7 @@ hr {
 }
 
 .trending ul {
-  padding-inline-start: 25px;
+  padding-inline-start: 20px;
   line-height: 0.5;
 }
 
@@ -474,6 +473,34 @@ hr {
   background-color: #313131;
 } */
 
+input[type="file"] {
+  cursor: pointer !important;
+}
+input[type="file"]::-webkit-file-upload-button {
+  border: none;
+  padding: 2px 10px;
+  background: orange;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input[type="file"]::-ms-browse {
+  border: none;
+  padding: 5px 12px;
+  background: orange;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background: #313131;
+  color: #fff;
+}
+
 .new-post i {
   padding-right: 5px;
 }
@@ -492,21 +519,31 @@ hr {
 }
 
 .loading {
-  /* margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  height: 100vh; */
   vertical-align: middle;
-  margin-top: 0px; /* need this to clear the default margin */
+  margin-top: 0px;
   margin-bottom: 0px;
   text-align: center;
 }
 
 .loading h1 {
   line-height: 90vh;
+}
+
+.home .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.home .row .col-md-7 {
+  order: 1;
+}
+
+.home .row .col-md-3 {
+  order: 2;
+}
+
+.new-post input:focus {
+  outline: none !important;
 }
 
 /**************************************************************/
@@ -549,6 +586,11 @@ hr {
   background-color: rgb(19, 19, 19);
 }
 
+.dark-mode .navbar-brand:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .dark-mode .home a {
   color: white;
   text-decoration: none;
@@ -557,6 +599,14 @@ hr {
 .dark-mode .home a:hover {
   color: orange;
   text-decoration: none;
+}
+
+.dark-mode .trending a {
+  color: orange;
+}
+
+.dark-mode .trending a:hover {
+  color: white;
 }
 
 .toggle {

@@ -112,13 +112,9 @@ const CreatePost = () => {
               required
               onChange={(e) => setImage(e.target.files[0])}
             />
-            {/* <Label for="file">
-              <i className="fa fa-upload"></i>
-              Choose a file
-            </Label> */}
             <FormText color="muted">
-              This is some placeholder block-level help text for the above
-              input. It's a bit lighter and easily wraps to a new line.
+              You can only upload one file so be careful, the maximum file size
+              is 10MB.
             </FormText>
           </FormGroup>
           <Button onClick={postDetails}>Submit</Button>
