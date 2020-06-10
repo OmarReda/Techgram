@@ -491,6 +491,24 @@ hr {
   background-color: #313131;
 }
 
+.loading {
+  /* margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100vh; */
+  vertical-align: middle;
+  margin-top: 0px; /* need this to clear the default margin */
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.loading h1 {
+  line-height: 90vh;
+}
+
 /**************************************************************/
 
 .light-mode {
@@ -513,7 +531,7 @@ hr {
   text-decoration: none;
 }
 
-.light-mode .home span {
+.light-mode .home .card span {
   color: black;
 }
 
