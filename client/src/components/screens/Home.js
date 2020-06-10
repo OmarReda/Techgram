@@ -7,6 +7,7 @@ import {
   CardTitle,
   CardSubtitle,
   Container,
+  Form,
 } from "reactstrap";
 import { UserContext } from "../../App";
 
@@ -27,8 +28,7 @@ const Home = () => {
   }, []);
 
   const likePost = (id) => {
-    console.log("Not Found");
-    console.log(state._id);
+    //console.log(state._id);
     fetch("/like", {
       method: "put",
       headers: {
@@ -57,8 +57,7 @@ const Home = () => {
   };
 
   const unlikePost = (id) => {
-    console.log("Found");
-    console.log(state._id);
+    //console.log(state._id);
     fetch("/unlike", {
       method: "put",
       headers: {
@@ -86,6 +85,52 @@ const Home = () => {
       });
   };
 
+  const makeComment = (text, postId) => {
+    fetch("/comment", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+      body: JSON.stringify({
+        postId,
+        text,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        const newData = data.map((item) => {
+          if (item._id == result._id) {
+            return result;
+          } else {
+            return item;
+          }
+        });
+        setData(newData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const deletePost = (postid) => {
+    fetch(`/deletepost/${postid}`, {
+      method: "delete",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        const newData = data.filter((item) => {
+          return item._id !== result._id;
+        });
+        setData(newData);
+      });
+  };
+
   return (
     <div className="home">
       <Container>
@@ -107,7 +152,6 @@ const Home = () => {
                     alt="post"
                   />
                   <div className="like">
-                    {console.log(item.likes.includes(state.id))}
                     {item.likes.includes(state.id) ? (
                       <div>
                         <i className="fa fa-heart"></i>
@@ -132,7 +176,29 @@ const Home = () => {
                   <CardSubtitle>{item.likes.length} Likes</CardSubtitle>
                   <CardSubtitle>{item.title}</CardSubtitle>
                   <CardText>{item.body}</CardText>
-                  <input type="text" placeholder="Comment" />
+
+                  {item.comments.map((record) => {
+                    return (
+                      <CardText key={record._id}>
+                        <span
+                          className="primary-color"
+                          style={{ fontWeight: "600" }}
+                        >
+                          {record.postedBy.name}
+                        </span>{" "}
+                        {record.text}
+                      </CardText>
+                    );
+                  })}
+
+                  <Form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      makeComment(e.target[0].value, item._id);
+                    }}
+                  >
+                    <input type="text" placeholder="Comment" />
+                  </Form>
                 </CardBody>
               </Card>
             );
