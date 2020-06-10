@@ -8,9 +8,11 @@ import {
   CardSubtitle,
   Container,
 } from "reactstrap";
+import { UserContext } from "../../App";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const { state, dispatch } = useContext(UserContext);
 
   useEffect(() => {
     fetch("/allpost", {
@@ -23,6 +25,66 @@ const Home = () => {
         setData(result.posts);
       });
   }, []);
+
+  const likePost = (id) => {
+    console.log("Not Found");
+    console.log(state._id);
+    fetch("/like", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+      body: JSON.stringify({
+        postId: id,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        const newData = data.map((item) => {
+          if (item._id == result._id) {
+            return result;
+          } else {
+            return item;
+          }
+        });
+        setData(newData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const unlikePost = (id) => {
+    console.log("Found");
+    console.log(state._id);
+    fetch("/unlike", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+      body: JSON.stringify({
+        postId: id,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        const newData = data.map((item) => {
+          if (item._id == result._id) {
+            return result;
+          } else {
+            return item;
+          }
+        });
+        setData(newData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="home">
@@ -45,8 +107,29 @@ const Home = () => {
                     alt="post"
                   />
                   <div className="like">
-                    <i className="fa fa-heart"></i>
+                    {console.log(item.likes.includes(state.id))}
+                    {item.likes.includes(state.id) ? (
+                      <div>
+                        <i className="fa fa-heart"></i>
+                        <i
+                          className="far fa-thumbs-down"
+                          style={{ marginLeft: "10px", color: "orange" }}
+                          onClick={() => {
+                            unlikePost(item._id);
+                          }}
+                        ></i>
+                      </div>
+                    ) : (
+                      <i
+                        className="far fa-thumbs-up"
+                        style={{ color: "orange" }}
+                        onClick={() => {
+                          likePost(item._id);
+                        }}
+                      ></i>
+                    )}
                   </div>
+                  <CardSubtitle>{item.likes.length} Likes</CardSubtitle>
                   <CardSubtitle>{item.title}</CardSubtitle>
                   <CardText>{item.body}</CardText>
                   <input type="text" placeholder="Comment" />

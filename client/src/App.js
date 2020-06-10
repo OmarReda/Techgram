@@ -80,7 +80,7 @@ function App() {
           <NavBar />
           <div className="toggle-container">
             <div className="toggle-btn">
-              <label class="fancy-checkbox">
+              <label className="fancy-checkbox">
                 <input
                   type="checkbox"
                   className="checkbox"
@@ -88,7 +88,7 @@ function App() {
                   onChange={() => setDarkMode((prevMode) => !prevMode)}
                 />
                 <i
-                  class="fas fa-sun unchecked"
+                  className="fas fa-sun unchecked"
                   style={{
                     fontSize: "26px",
                     paddingTop: "6px",
@@ -97,7 +97,7 @@ function App() {
                   }}
                 ></i>
                 <i
-                  class="fas fa-moon checked"
+                  className="fas fa-moon checked"
                   style={{
                     fontSize: "26px",
                     paddingTop: "6px",
