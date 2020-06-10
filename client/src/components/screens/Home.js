@@ -9,7 +9,10 @@ import {
   Container,
   Form,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -128,6 +131,15 @@ const Home = () => {
           return item._id !== result._id;
         });
         setData(newData);
+        toast.warning("🤫 You deleted Your post 🗑️", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
   };
 
@@ -144,7 +156,25 @@ const Home = () => {
                       className="user-pic"
                       src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                     />
-                    {item.postedBy.name}
+                    <Link
+                      to={
+                        item.postedBy._id !== state._id
+                          ? "/profile/" + item.postedBy._id
+                          : "/profile"
+                      }
+                    >
+                      {item.postedBy.name}
+                    </Link>{" "}
+                    {item.postedBy._id == state.id && (
+                      <i
+                        className="fas fa-trash mr-3 home-icon"
+                        style={{
+                          float: "right",
+                          fontSize: "20px",
+                        }}
+                        onClick={() => deletePost(item._id)}
+                      ></i>
+                    )}
                   </CardTitle>
                   <CardImg
                     className="home-card-img"
