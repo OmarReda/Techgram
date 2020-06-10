@@ -14,6 +14,27 @@
 <p align="center">
    <strong><i>This application is developed to be like Instagram, users can login and signup, assigned token makes the user able to upload new posts on the News Feed, also users can view their profiles and see the photos that he has uploaded before, furthermore, every user can leave a comment, and follow other users.</i></strong>
   </p>
+ 
+ 
+## Features
+
+1- Authentication & Authorization
+2- Add & delete posts
+3- Like & unlike posts
+4- Follow & unfollow users
+5- Comment on others posts
+6- Discover to show all users posts & Following Posts to show the posts of people you follow
+7- Users Search
+8- Reset Password
+
+
+## Screens
+
+  - Discover 🌎
+  - Friends Posts ❤️
+  - Upload Post ☁️
+  - Profile 👨‍💻
+  - Login & Signup & Password Forget  🔒🔓
 
 
 ## Stack Used
