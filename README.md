@@ -12,7 +12,7 @@
 
 ## Introduction
 <p align="center">
-   <strong><i>This application is developed to be like Instagram, users can login and signup, assigned token makes the user able to upload new posts on the News Feed, also users can view their profiles and see the photos that he has uploaded before, furthermore, every user can leave a comment, and follow other users.</i></strong>
+   <strong><i>This application is developed to be like Instagram but technology relate, users can login and signup, assigned token makes the user able to upload new posts on the News Feed, also users can view their profiles and see the photos that they have uploaded before, furthermore, every user can leave likes and comments on any post, and follow other users.</i></strong>
   </p>
  
  
@@ -30,10 +30,11 @@
 
 ## Screens
 
-  - Discover 🌎
-  - Friends Posts ❤️
-  - Upload Post ☁️
-  - Profile 👨‍💻
+  - Discover 🌎 (All Posts in DB)
+  - Friends Posts ❤️ (All Posts of People You Follow)
+  - Create New Post ☁️
+  - Profile 👨‍💻 (My Posts)
+  - Others Profile 👨‍👩‍👧‍👦 (Anyone's Profile Except Me)
   - Login & Signup & Password Forget  🔒🔓
 
 
@@ -48,13 +49,15 @@
 **_For Client Side:_**
    - React.Js
    - Reactstrap
+   - React Toastify
+   - Font Awesome
   
 
 ## Steps
 
 - Open the Server Folder and Client Folder in two separate CMDs
-- For Server Side CMD, type Nodemon app
-- For Client Side CMD, type npm start
+- For Server Side CMD, type "nodemon app"
+- For Client Side CMD, type "npm start"
 - Server will run on localhost:5000
 - Client will run on localhost:3000 
 (Proxy is added in client side in order to prevent CORS Policy)
