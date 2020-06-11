@@ -28,6 +28,7 @@ const Profile = () => {
         </div>
         <div className="col-md-8">
           <h3>{state ? state.name : "loading"}</h3>
+          <h6 style={{ color: "gray" }}>{state ? state.email : "loading"}</h6>
           <div className="row counts">
             <div className="col-md-4">
               <h5>
@@ -36,12 +37,18 @@ const Profile = () => {
             </div>
             <div className="col-md-4">
               <h5>
-                <span className="primary-color">50</span> Followers
+                <span className="primary-color">
+                  {state ? state.followers.length : "0"}
+                </span>{" "}
+                Followers
               </h5>
             </div>
             <div className="col-md-4">
               <h5>
-                <span className="primary-color">120</span> Following
+                <span className="primary-color">
+                  {state ? state.following.length : "0"}
+                </span>{" "}
+                Following
               </h5>
             </div>
           </div>

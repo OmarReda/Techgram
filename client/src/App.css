@@ -225,6 +225,31 @@ hr {
   margin-top: 40px;
 }
 
+.profile .follow {
+  margin-top: 40px;
+}
+
+.profile .follow button {
+  background-color: orange;
+  font-size: 24px;
+  border: none;
+  padding: 0px 40px;
+  font-weight: 600;
+  font-family: lobster;
+  color: black;
+  border: 2px solid orange;
+}
+
+.profile .follow button:hover {
+  background-color: rgb(19, 19, 19);
+  color: orange;
+  border: 2px solid orange;
+}
+
+button:focus {
+  outline: none;
+}
+
 .profile .gallery h4 {
   font-family: lobster;
   text-align: center;
@@ -447,31 +472,6 @@ hr {
 .new-post input::placeholder {
   color: rgba(185, 185, 185, 0.575);
 }
-/* 
-.inputfile {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.inputfile + label {
-  font-size: 16px;
-  font-weight: 700;
-  padding: 8px;
-  border-radius: 5px;
-  color: white;
-  background-color: orange;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-  background-color: #313131;
-} */
 
 input[type="file"] {
   cursor: pointer !important;
