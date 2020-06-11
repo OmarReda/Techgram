@@ -33,7 +33,7 @@ const NavBar = (props) => {
           </Link>
         </NavItem>,
         <NavItem>
-          <Link to="/">
+          <Link to="/myfollowingpost">
             <i className="fas fa-heart home-icon"></i>
           </Link>
         </NavItem>,

@@ -154,20 +154,20 @@ const Home = () => {
             <ul>
               <li>
                 <span>
-                  <h6>#IBM_Cloud</h6>
-                  <p>This is a trending post, Hello World!</p>
+                  <h6>#Pi_Technology</h6>
+                  <p>This is trending for this month.</p>
                 </span>
               </li>
               <li>
                 <span>
-                  <h6>#AWS</h6>
-                  <p>This is a trending post, Hello World!</p>
+                  <h6>#AWS_Slack</h6>
+                  <p>This is trending for this month.</p>
                 </span>
               </li>
               <li>
                 <span>
-                  <h6>#IoT</h6>
-                  <p>This is a trending post, Hello World!</p>
+                  <h6>#Cloud</h6>
+                  <p>This is trending for this month.</p>
                 </span>
               </li>
             </ul>
@@ -197,7 +197,7 @@ const Home = () => {
                       />
                       <Link
                         to={
-                          item.postedBy._id !== state._id
+                          item.postedBy._id !== state.id
                             ? "/profile/" + item.postedBy._id
                             : "/profile"
                         }
