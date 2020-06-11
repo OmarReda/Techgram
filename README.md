@@ -18,14 +18,14 @@
  
 ## Features
 
-1- Authentication & Authorization
-2- Add & delete posts
-3- Like & unlike posts
-4- Follow & unfollow users
-5- Comment on others posts
-6- Discover to show all users posts & Following Posts to show the posts of people you follow
-7- Users Search
-8- Reset Password
+ - Authentication & Authorization
+ - Add & delete posts
+ - Like & unlike posts
+ - Follow & unfollow users
+ - Comment on others posts
+ - Discover to show all users posts & Following Posts to show the posts of people you follow
+ - Users Search
+ - Reset Password
 
 
 ## Screens
