@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../App";
+import { Spinner } from "reactstrap";
 
 const Profile = () => {
   const [mypics, setPics] = useState([]);
@@ -59,23 +60,43 @@ const Profile = () => {
           <span className="primary-color">Gall</span>ery
         </h4>
         <div className="row">
-          {mypics.map((item) => {
-            return (
-              <div className="col-md-4 post">
-                <div className="content-overlay"></div>
-                <img
-                  className="gallery-img content-image"
-                  key={item._id}
-                  src={item.photo}
-                  alt={item.title}
-                />
-                <div className="content-details fadeIn-bottom">
-                  <h3 className="content-title">{item.title}</h3>
-                  <p className="content-text">{item._id}</p>
+          {mypics.length > 0 ? (
+            mypics.map((item) => {
+              return (
+                <div className="col-md-4 post">
+                  <div className="content-overlay"></div>
+                  <img
+                    className="gallery-img content-image"
+                    key={item._id}
+                    src={item.photo}
+                    alt={item.title}
+                  />
+                  <div className="content-details fadeIn-bottom">
+                    <h3 className="content-title">{item.title}</h3>
+                    <p className="content-text">{item._id}</p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          ) : (
+            <div
+              className="loading-profile"
+              style={{ paddingTop: "100px", margin: "0 auto" }}
+            >
+              <h1
+                style={{
+                  fontFamily: "lobster",
+                }}
+              >
+                <Spinner
+                  color="warning"
+                  size="sm"
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                />{" "}
+                <span className="primary-color">Load</span>ing
+              </h1>
+            </div>
+          )}
         </div>
       </div>
     </div>
