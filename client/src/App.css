@@ -101,7 +101,7 @@ body {
   padding: 30px;
   text-align: center;
   max-width: 400px;
-  margin: 120px auto 10px auto;
+  margin: 100px auto 10px auto;
   border: 1px solid orange;
   border-radius: 10px;
 }
@@ -238,9 +238,9 @@ hr {
   font-size: 24px;
   border: none;
   padding: 0px 40px;
-  font-weight: 600;
   font-family: lobster;
-  color: black;
+  letter-spacing: 0.05em;
+  color: white;
   border: 2px solid orange;
 }
 
@@ -251,6 +251,41 @@ hr {
 }
 
 button:focus {
+  outline: none;
+}
+
+.edit-profile-pic [type="file"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.edit-profile-pic [type="file"] + label {
+  background-color: orange;
+  border-radius: 5px;
+  font-size: 22px;
+  font-family: lobster;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  padding: 5px 25px;
+  margin-top: 40px;
+  border: 2px solid orange;
+}
+
+.edit-profile-pic [type="file"]:focus + label,
+.edit-profile-pic [type="file"] + label:hover {
+  background-color: rgb(19, 19, 19);
+  border: 2px solid orange;
+  color: orange;
+}
+
+.edit-profile-pic [type="file"]:focus + label {
   outline: none;
 }
 
@@ -535,6 +570,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   margin-bottom: 0px;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 70px;
 }
 
 .loading h1 {

@@ -96,10 +96,7 @@ const Profile = () => {
         <div className="profile container">
           <div className="row info">
             <div className="col-md-4">
-              <img
-                className="profile-pic"
-                src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-              />
+              <img className="profile-pic" src={userProfile.user.pic} />
             </div>
             <div className="col-md-8">
               <h3>{userProfile.user.name}</h3>
@@ -174,7 +171,7 @@ const Profile = () => {
             animated
             color="warning"
             value={100}
-            style={{ height: "10px" }}
+            style={{ height: "10px", marginTop: "15px" }}
           />
           <h1
             style={{

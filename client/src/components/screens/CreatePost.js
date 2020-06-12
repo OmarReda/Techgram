@@ -114,7 +114,12 @@ const CreatePost = () => {
             />
             <FormText color="muted">
               You can only upload one file so be careful, the maximum file size
-              is 10MB. Please be patient while we upload your post.
+              is 10MB.
+              <br />
+              <span className="primary-color">
+                Image upload depends on your internet connection, so please be
+                patient after submit.
+              </span>
             </FormText>
           </FormGroup>
           <Button onClick={postDetails}>Submit</Button>

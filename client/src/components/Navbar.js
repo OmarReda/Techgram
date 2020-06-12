@@ -44,10 +44,7 @@ const NavBar = (props) => {
         </NavItem>,
         <NavItem>
           <Link to="/profile">
-            <img
-              className="profile-nav"
-              src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            />
+            <img className="profile-nav" src={state.pic} />
           </Link>
         </NavItem>,
         <NavItem>
