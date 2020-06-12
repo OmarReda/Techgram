@@ -112,7 +112,10 @@ const CreatePost = () => {
               required
               onChange={(e) => setImage(e.target.files[0])}
             />
-            <FormText color="muted">
+            <FormText
+              color="muted"
+              style={{ fontSize: "12px", textAlign: "center" }}
+            >
               You can only upload one file so be careful, the maximum file size
               is 10MB.
               <br />

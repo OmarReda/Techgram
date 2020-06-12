@@ -274,7 +274,13 @@ const SubscribedUserPosts = () => {
                 );
               })
             ) : (
-              <h1 style={{ fontFamily: "lobster", height: "84vh" }}>
+              <h1
+                style={{
+                  fontFamily: "lobster",
+                  height: "84vh",
+                  textAlign: "center",
+                }}
+              >
                 <span className="primary-color">You Didn't Follow</span> Anyone
                 Yet.
               </h1>

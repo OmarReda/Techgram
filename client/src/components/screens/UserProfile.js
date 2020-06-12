@@ -157,7 +157,13 @@ const Profile = () => {
                     />
                     <div className="content-details fadeIn-bottom">
                       <h3 className="content-title">{item.title}</h3>
-                      <p className="content-text">{item._id}</p>
+                      <p className="content-text" style={{ fontSize: "16px" }}>
+                        {item.likes.length}{" "}
+                        <i
+                          className="far fa-heart"
+                          style={{ color: "white" }}
+                        ></i>
+                      </p>
                     </div>
                   </div>
                 );

@@ -104,7 +104,7 @@ const Profile = () => {
             />
             <Label for="file">Edit Profile Picture</Label>
             <br />
-            <span style={{ fontSize: "12px", color: "gray", width: "100%" }}>
+            <span style={{ fontSize: "10px", color: "gray", width: "100%" }}>
               Image upload depends on the internet connection.
             </span>
             <span style={{ fontSize: "12px", color: "gray" }}>
@@ -132,7 +132,13 @@ const Profile = () => {
                   />
                   <div className="content-details fadeIn-bottom">
                     <h3 className="content-title">{item.title}</h3>
-                    <p className="content-text">{item._id}</p>
+                    <p className="content-text" style={{ fontSize: "16px" }}>
+                      {item.likes.length}{" "}
+                      <i
+                        className="far fa-heart"
+                        style={{ color: "white" }}
+                      ></i>
+                    </p>
                   </div>
                 </div>
               );
@@ -140,7 +146,11 @@ const Profile = () => {
           ) : (
             <div
               className="loading-profile"
-              style={{ paddingTop: "100px", margin: "0 auto" }}
+              style={{
+                paddingTop: "100px",
+                margin: "0 auto",
+                paddingBottom: "80px",
+              }}
             >
               <h1
                 style={{
