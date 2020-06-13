@@ -1,0 +1,734 @@
+@font-face {
+  font-family: "lobster";
+  src: url("./fonts/Lobster/Lobster-Regular.ttf") format("woff");
+}
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto/Roboto-Regular.ttf") format("woff");
+}
+
+body {
+  background-color: rgb(36, 36, 36) !important;
+  font-family: roboto;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.primary-color {
+  color: orange;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: 1.5px solid orange;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.navbar-brand {
+  font-family: lobster;
+  font-size: 26px;
+  color: #313131;
+}
+
+.navbar-brand:hover {
+  color: #313131;
+}
+
+.navbar-toggler {
+  border: 1px solid orange;
+}
+
+.show li {
+  padding: 10px;
+  width: fit-content;
+}
+
+.navbar-toggler-icon {
+  color: orange;
+}
+
+.home-icon {
+  color: orange;
+  font-size: 28px;
+  padding-top: 4px;
+}
+
+.home-icon:hover {
+  color: #313131;
+}
+
+.navbar li a {
+  color: #313131;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.selected {
+  color: #313131;
+}
+
+.navbar li a:hover {
+  color: #313131;
+}
+
+.navbar .profile-nav {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid orange;
+}
+
+.navbar .profile-nav:hover {
+  border: 2px solid #313131;
+}
+
+.card-container {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 160px;
+}
+
+.Login-card {
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 100px auto 10px auto;
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+.Login-card .card-title {
+  font-size: 48px;
+  font-family: lobster;
+  color: black;
+}
+
+.Login-card input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0;
+  border-bottom: 1px solid orange;
+  outline: 0;
+  font-size: 14px;
+}
+.Login-card input::placeholder {
+  color: rgba(185, 185, 185, 0.575);
+}
+
+.forget a {
+  color: #313131;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Login-card button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  margin-top: 10px;
+}
+
+.Login-card button:hover {
+  background-color: #313131;
+}
+
+hr {
+  background-color: orange;
+  max-width: 200px;
+  margin: 30px auto 20px auto;
+}
+
+.Login-Signup {
+  padding-top: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+.Login-Signup .new-account {
+  color: #313131;
+  font-size: 16px;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.Login-Signup .new-account span {
+  font-weight: 600;
+}
+
+.Login-Signup .new-account a:hover {
+  text-decoration: none;
+}
+
+.forget a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.Login-card .policy {
+  color: #9e9e9e;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+.Login-card .policy span {
+  color: #9c9c9c;
+  font-weight: 500;
+}
+
+.Toastify__toast {
+  margin-top: 60px;
+}
+
+.Toastify__progress-bar--default {
+  background: orange;
+}
+
+.profile {
+  max-width: 900px;
+  padding-top: 50px;
+}
+
+.profile .row {
+  text-align: center;
+}
+
+.profile .info {
+  margin-top: 50px;
+  border-bottom: 1px solid orange;
+  padding-bottom: 20px;
+}
+
+.profile-pic {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 2px solid orange;
+  margin-bottom: 30px;
+}
+
+.image {
+  display: flex;
+  justify-content: space-around;
+  margin: 18px 0px;
+}
+
+.profile .counts {
+  margin-top: 25px;
+}
+
+.profile .follow {
+  margin-top: 40px;
+}
+
+.profile .follow button {
+  background-color: orange;
+  font-size: 24px;
+  border: none;
+  padding: 0px 40px;
+  font-family: lobster;
+  letter-spacing: 0.05em;
+  color: white;
+  border: 2px solid orange;
+}
+
+.profile .follow button:hover {
+  background-color: rgb(19, 19, 19);
+  color: orange;
+  border: 2px solid orange;
+}
+
+button:focus {
+  outline: none;
+}
+
+.edit-profile-pic [type="file"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.edit-profile-pic [type="file"] + label {
+  background-color: orange;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: lobster;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  padding: 5px 25px;
+  margin-top: 25px;
+  border: 2px solid orange;
+}
+
+.edit-profile-pic [type="file"]:focus + label,
+.edit-profile-pic [type="file"] + label:hover {
+  background-color: rgb(19, 19, 19);
+  border: 2px solid orange;
+  color: orange;
+}
+
+.edit-profile-pic [type="file"]:focus + label {
+  outline: none;
+}
+
+.profile .gallery {
+  padding-bottom: 70px;
+}
+
+.profile .gallery h4 {
+  font-family: lobster;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.profile .gallery .post img {
+  width: 270px;
+  height: 220px;
+}
+
+.profile .gallery .post {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.post .content-overlay {
+  background: rgba(255, 136, 0, 0.63);
+  position: absolute;
+  height: 100%;
+  width: 270px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  margin-left: 15px;
+}
+
+.post:hover .content-overlay {
+  opacity: 1;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.post:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom {
+  top: 80%;
+}
+
+.home {
+  margin: 30px auto;
+  padding-top: 65px;
+}
+
+.home .col-md-7 {
+  padding: 0;
+}
+
+.home-card {
+  height: max-content;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.home .user-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid orange;
+  margin-right: 10px;
+}
+
+.home-card img {
+  width: 700;
+  display: inline-block;
+  border-radius: 0;
+}
+
+.home-card .card-title {
+  padding: 10px 0px 0px 10px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.home-card .card-body {
+  padding: 0;
+}
+
+.home-card .like {
+  color: red;
+  margin: 20px 20px;
+  font-size: 24px;
+}
+
+.home-card .card-subtitle {
+  margin: 20px 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.home-card .card-text {
+  margin: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.home-card input {
+  width: 92%;
+  padding: 5px;
+  margin: 0px 0px 30px 20px;
+  position: relative;
+  border: 0;
+  border-bottom: 1.5px solid orange;
+  outline: 0;
+}
+.home-card input::placeholder {
+  color: rgba(185, 185, 185, 0.575);
+}
+
+.trending {
+  display: inline-block;
+  margin-left: 20px;
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.trending h4 {
+  width: 100%;
+  border-bottom: 1.5px solid orange;
+  padding-bottom: 15px;
+  font-family: lobster;
+}
+
+.trending ul {
+  padding-inline-start: 20px;
+  line-height: 0.5;
+}
+
+.trending li {
+  color: orange;
+}
+
+.trending li span {
+  font-size: 12px;
+  color: #474747;
+}
+
+.trending .footer {
+  color: #818181;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.new {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 260px;
+  padding-top: 70px;
+}
+
+.new-post {
+  margin: 0px auto;
+  max-width: 550px;
+  background-color: #fff;
+  padding: 20px 30px 20px 30px;
+  border: 1.5px solid orange;
+  border-radius: 10px;
+}
+
+.new-post-title {
+  margin: 30px auto 10px auto;
+  max-width: 550px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1.5px solid orange;
+  border-radius: 10px;
+  text-align: center;
+  font-family: lobster;
+}
+
+.new-post label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.new-post input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0;
+  border-bottom: 1px solid orange;
+  outline: 0;
+  border-radius: 0;
+}
+.new-post input::placeholder {
+  color: rgba(185, 185, 185, 0.575);
+}
+
+input[type="file"] {
+  cursor: pointer !important;
+}
+input[type="file"]::-webkit-file-upload-button {
+  border: none;
+  padding: 2px 10px;
+  background: orange;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input[type="file"]::-ms-browse {
+  border: none;
+  padding: 5px 12px;
+  background: orange;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background: #313131;
+  color: #fff;
+}
+
+.new-post i {
+  padding-right: 5px;
+}
+
+.new-post button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.new-post button:hover {
+  background-color: #313131;
+}
+
+.loading {
+  vertical-align: middle;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.loading h1 {
+  line-height: 90vh;
+}
+
+.home .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.home .row .col-md-7 {
+  order: 1;
+}
+
+.home .row .col-md-3 {
+  order: 2;
+}
+
+.new-post input:focus {
+  outline: none !important;
+}
+
+/**************************************************************/
+
+.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.5s ease-out;
+}
+
+.light-mode nav {
+  transition: background-color 0.5s ease-out;
+}
+
+.light-mode .home a {
+  color: black;
+  text-decoration: none;
+}
+
+.light-mode .home a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.light-mode .home .card span {
+  color: black;
+}
+
+.dark-mode {
+  background-color: rgb(36, 36, 36);
+  transition: background-color 0.5s ease-out;
+  color: white;
+}
+
+.dark-mode .navbar-toggler-icon {
+  background-image: url("list.svg");
+}
+
+.dark-mode nav {
+  background-color: rgb(19, 19, 19);
+}
+
+.dark-mode .navbar-brand:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.dark-mode .home a {
+  color: white;
+  text-decoration: none;
+}
+
+.dark-mode .home a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.dark-mode .trending a {
+  color: orange;
+}
+
+.dark-mode .trending a:hover {
+  color: white;
+}
+
+.toggle {
+  position: relative;
+  padding: 0 4px;
+  align-items: center;
+}
+
+.toggle-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  padding: 5px 0px 0px 0px;
+  border-radius: 50%;
+  text-align: center;
+  background: orange;
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .Login-card .card-title,
+.dark-mode .Login-Signup p,
+.dark-mode .Login-card .policy,
+.dark-mode .Login-card .forget a,
+.dark-mode .trending p,
+.dark-mode .trending h6 {
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode .Login-card .forget a:hover {
+  color: orange;
+}
+
+.dark-mode .card {
+  background-color: rgb(19, 19, 19);
+}
+
+.dark-mode .card input {
+  background-color: rgb(19, 19, 19);
+  color: white;
+}
+
+.dark-mode .new-post {
+  background-color: rgb(19, 19, 19);
+}
+
+.dark-mode .new-post-title {
+  background-color: rgb(19, 19, 19);
+}
+
+.dark-mode .new-post input {
+  background-color: rgb(19, 19, 19);
+  color: white;
+}
+
+.toggle-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+  display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .checked {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .unchecked {
+  display: none;
+}
