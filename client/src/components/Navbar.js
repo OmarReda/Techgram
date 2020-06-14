@@ -25,8 +25,29 @@ const NavBar = (props) => {
   const history = useHistory();
 
   const [modal, setModal] = useState(false);
-  const Searchtoggle = () => setModal(!modal);
+  const Searchtoggle = () => {
+    setModal(!modal);
+    setSearch("");
+  };
   const [search, setSearch] = useState("");
+  const [userDetails, setUserDetails] = useState([]);
+
+  const fetchUsers = (query) => {
+    setSearch(query);
+    fetch("/search-users", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query,
+      }),
+    })
+      .then((res) => res.json())
+      .then((results) => {
+        setUserDetails(results.user);
+      });
+  };
 
   const renderList = () => {
     if (state) {
@@ -113,11 +134,23 @@ const NavBar = (props) => {
                     placeholder="User Search"
                     required
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                    onChange={(e) => fetchUsers(e.target.value)}
                   />
                   <ListGroup>
-                    <ListGroupItem>Test</ListGroupItem>
-                    <ListGroupItem>Test 2</ListGroupItem>
+                    {userDetails.map((item) => {
+                      return (
+                        <Link
+                          to={
+                            item._id !== state.id
+                              ? "/profile/" + item._id
+                              : "/profile"
+                          }
+                          onClick={Searchtoggle}
+                        >
+                          <ListGroupItem>{item.email}</ListGroupItem>
+                        </Link>
+                      );
+                    })}
                   </ListGroup>
                 </ModalBody>
               </Modal>

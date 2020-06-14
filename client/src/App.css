@@ -63,12 +63,14 @@ body {
 .modal-content .list-group-item {
   width: 100%;
   border: none;
+  color: #313131;
+  text-decoration: none;
+  color: orange;
 }
-/* 
-.dark-mode .modal-content {
-  background-color: rgb(19, 19, 19);
-  border: 1.5px solid orange;
-} */
+
+a:hover {
+  text-decoration: none;
+}
 
 .show li {
   padding: 10px;
