@@ -7,8 +7,6 @@ const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config/keys");
 const requireLogin = require("../middleware/requireLogin");
 
-//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
-
 router.get("/", (req, res) => {
   res.send("Hello");
 });

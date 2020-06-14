@@ -154,19 +154,19 @@ const SubscribedUserPosts = () => {
             <ul>
               <li>
                 <span>
-                  <h6>#IBM_Cloud</h6>
+                  <h6>#Pi_Technology</h6>
                   <p>This is trending for this month.</p>
                 </span>
               </li>
               <li>
                 <span>
-                  <h6>#AWS</h6>
+                  <h6>#AWS_Slack</h6>
                   <p>This is trending for this month.</p>
                 </span>
               </li>
               <li>
                 <span>
-                  <h6>#IoT</h6>
+                  <h6>#Cloud</h6>
                   <p>This is trending for this month.</p>
                 </span>
               </li>

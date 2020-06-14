@@ -43,6 +43,33 @@ body {
   border: 1px solid orange;
 }
 
+.modal-content input {
+  width: 100%;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid orange;
+  padding: 5px;
+}
+
+.modal-content .close {
+  color: orange;
+}
+
+.modal-content input:focus {
+  outline: none;
+}
+
+.modal-content .list-group-item {
+  width: 100%;
+  border: none;
+}
+/* 
+.dark-mode .modal-content {
+  background-color: rgb(19, 19, 19);
+  border: 1.5px solid orange;
+} */
+
 .show li {
   padding: 10px;
   width: fit-content;

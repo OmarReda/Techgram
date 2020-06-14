@@ -7,6 +7,11 @@ import {
   Nav,
   NavItem,
   Container,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ListGroup,
+  ListGroupItem,
 } from "reactstrap";
 import { Link, useHistory, Redirect } from "react-router-dom";
 import { UserContext } from "../App";
@@ -19,35 +24,39 @@ const NavBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   const history = useHistory();
 
+  const [modal, setModal] = useState(false);
+  const Searchtoggle = () => setModal(!modal);
+  const [search, setSearch] = useState("");
+
   const renderList = () => {
     if (state) {
       return [
-        <NavItem>
-          <Link to="/">
+        <NavItem key="1">
+          <Link to="/" onClick={Searchtoggle}>
             <i className="fas fa-search home-icon"></i>
           </Link>
         </NavItem>,
-        <NavItem>
+        <NavItem key="2">
           <Link to="/">
             <i className="fas fa-globe-africa home-icon"></i>
           </Link>
         </NavItem>,
-        <NavItem>
+        <NavItem key="3">
           <Link to="/myfollowingpost">
             <i className="fas fa-heart home-icon"></i>
           </Link>
         </NavItem>,
-        <NavItem>
+        <NavItem key="4">
           <Link to="/create">
             <i className="fas fa-cloud-upload-alt home-icon"></i>
           </Link>
         </NavItem>,
-        <NavItem>
+        <NavItem key="5">
           <Link to="/profile">
             <img className="profile-nav" src={state.pic} />
           </Link>
         </NavItem>,
-        <NavItem>
+        <NavItem key="6">
           <Link
             onClick={() => {
               localStorage.clear();
@@ -71,12 +80,12 @@ const NavBar = (props) => {
       ];
     } else {
       return [
-        <NavItem>
+        <NavItem key="7">
           <Link to="/signin">
             <i className="fas fa-user-lock home-icon"></i>
           </Link>
         </NavItem>,
-        <NavItem>
+        <NavItem key="8">
           <Link to="/signup">
             <i className="fas fa-user-plus home-icon"></i>
           </Link>
@@ -96,6 +105,22 @@ const NavBar = (props) => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               {renderList()}
+              <Modal isOpen={modal} toggle={Searchtoggle}>
+                <ModalHeader toggle={Searchtoggle}>Search Users</ModalHeader>
+                <ModalBody>
+                  <input
+                    type="text"
+                    placeholder="User Search"
+                    required
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <ListGroup>
+                    <ListGroupItem>Test</ListGroupItem>
+                    <ListGroupItem>Test 2</ListGroupItem>
+                  </ListGroup>
+                </ModalBody>
+              </Modal>
             </Nav>
           </Collapse>
         </Container>
