@@ -22,10 +22,11 @@
  - Add & delete posts
  - Like & unlike posts
  - Follow & unfollow users
- - Comment on others posts
- - Discover to show all users posts & Following Posts to show the posts of people you follow
- - Users Search
- - Reset Password
+ - Comment on posts
+ - Discover to show all users posts & Following Posts to show the posts of people you follow (Sorted)
+ - Search Users By Email
+ - Edit Profile Picture
+ - Light & Dark Mode
 
 
 ## Screens
@@ -35,6 +36,7 @@
   - Create New Post ☁️
   - Profile 👨‍💻 (My Posts)
   - Others Profile 👨‍👩‍👧‍👦 (Anyone's Profile Except Me)
+  - Search Users 🔍 
   - Login & Signup & Password Forget  🔒🔓
 
 
@@ -65,8 +67,6 @@
 
 ## (#TODO)
 
-- Continue the development of Server Side.
-- Link the remaining parts of the Client Side with Server Side.
 - Deploy app on heroku
 
 
