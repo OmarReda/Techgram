@@ -74,7 +74,7 @@ const NavBar = (props) => {
         </NavItem>,
         <NavItem key="5">
           <Link to="/profile">
-            <img className="profile-nav" src={state.pic} />
+            <img className="profile-nav" src={state.pic} alt="" />
           </Link>
         </NavItem>,
         <NavItem key="6">

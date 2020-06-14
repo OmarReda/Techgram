@@ -147,7 +147,7 @@ const Profile = () => {
             <div className="row">
               {userProfile.posts.map((item) => {
                 return (
-                  <div className="col-md-4 post">
+                  <div className="col-md-4 post" key={item._id}>
                     <div className="content-overlay"></div>
                     <img
                       className="gallery-img content-image"

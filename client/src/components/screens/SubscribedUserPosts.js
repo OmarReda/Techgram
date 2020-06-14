@@ -174,11 +174,11 @@ const SubscribedUserPosts = () => {
             <div>
               <div className="footer">
                 <p>
-                  <a href="#">About</a> - <a href="#">Help</a> -{" "}
-                  <a href="#">Press</a> - <a href="#">API</a> -{" "}
-                  <a href="#">Jobs</a> - <a href="#">Privacy</a> -{" "}
-                  <a href="#">Terms</a> - <a href="#">Locations</a> -{" "}
-                  <a href="#">Hashtags</a> - <a href="#">Language</a>
+                  <a href="/">About</a> - <a href="/">Help</a> -{" "}
+                  <a href="/">Press</a> - <a href="/">API</a> -{" "}
+                  <a href="/">Jobs</a> - <a href="/">Privacy</a> -{" "}
+                  <a href="/">Terms</a> - <a href="/">Locations</a> -{" "}
+                  <a href="/">Hashtags</a> - <a href="/">Language</a>
                 </p>
                 <p>© 2020 TECHGRAM BY OMAR REDA</p>
               </div>
@@ -192,10 +192,7 @@ const SubscribedUserPosts = () => {
                   <Card className="home-card " key={item._id}>
                     <CardBody>
                       <CardTitle>
-                        <img
-                          className="user-pic"
-                          src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                        />
+                        <img className="user-pic" src={item.postedBy.pic} />
                         <Link
                           to={
                             item.postedBy._id !== state.id

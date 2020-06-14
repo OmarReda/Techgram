@@ -175,11 +175,11 @@ const Home = () => {
             <div>
               <div className="footer">
                 <p>
-                  <a href="#">About</a> - <a href="#">Help</a> -{" "}
-                  <a href="#">Press</a> - <a href="#">API</a> -{" "}
-                  <a href="#">Jobs</a> - <a href="#">Privacy</a> -{" "}
-                  <a href="#">Terms</a> - <a href="#">Locations</a> -{" "}
-                  <a href="#">Hashtags</a> - <a href="#">Language</a>
+                  <a href="/">About</a> - <a href="/">Help</a> -{" "}
+                  <a href="/">Press</a> - <a href="/">API</a> -{" "}
+                  <a href="/">Jobs</a> - <a href="/">Privacy</a> -{" "}
+                  <a href="/">Terms</a> - <a href="/">Locations</a> -{" "}
+                  <a href="/">Hashtags</a> - <a href="/">Language</a>
                 </p>
                 <p>© 2020 TECHGRAM BY OMAR REDA</p>
               </div>

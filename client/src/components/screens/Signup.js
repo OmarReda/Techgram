@@ -107,50 +107,6 @@ const Signup = (props) => {
       });
   };
 
-  // const PostData = () => {
-  //   fetch("/signup", {
-  //     method: "post",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name,
-  //       password,
-  //       email,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.error) {
-  //         {
-  //           toast.error("😕 " + data.error + " 😔", {
-  //             position: "bottom-right",
-  //             autoClose: 3000,
-  //             hideProgressBar: false,
-  //             closeOnClick: true,
-  //             pauseOnHover: true,
-  //             draggable: true,
-  //             progress: undefined,
-  //           });
-  //         }
-  //       } else {
-  //         toast.success("👾 " + data.message + " 🚀", {
-  //           position: "bottom-center",
-  //           autoClose: 3000,
-  //           hideProgressBar: false,
-  //           closeOnClick: true,
-  //           pauseOnHover: false,
-  //           draggable: true,
-  //           progress: undefined,
-  //         });
-  //         history.push("/signin");
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   const PostData = () => {
     if (image) {
       uploadPic();
@@ -176,7 +132,6 @@ const Signup = (props) => {
           <input
             type="text"
             placeholder="Email"
-            type="email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -184,7 +139,6 @@ const Signup = (props) => {
           <input
             type="password"
             placeholder="Password"
-            type="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
