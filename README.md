@@ -27,6 +27,7 @@
  - Search Users By Email
  - Edit Profile Picture
  - Light & Dark Mode
+ - Responsive Design & Components
 
 
 ## Screens
