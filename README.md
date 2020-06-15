@@ -41,7 +41,7 @@
   - Login & Signup & Password Forget  🔒🔓
 
 
-## Stack Used
+## Tech Stack
 
 **_For Server Side:_**
    - Node.Js
