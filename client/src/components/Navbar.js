@@ -55,6 +55,35 @@ const NavBar = (props) => {
         <NavItem key="1">
           <Link to="/" onClick={Searchtoggle}>
             <i className="fas fa-search home-icon"></i>
+            <Modal isOpen={modal} toggle={Searchtoggle}>
+              <ModalHeader toggle={Searchtoggle}>Search Users</ModalHeader>
+              <ModalBody>
+                <input
+                  type="text"
+                  placeholder="User Search"
+                  required
+                  value={search}
+                  onChange={(e) => fetchUsers(e.target.value)}
+                />
+                <ListGroup>
+                  {userDetails.map((item) => {
+                    return (
+                      <Link
+                        to={
+                          item._id !== state.id
+                            ? "/profile/" + item._id
+                            : "/profile"
+                        }
+                        onClick={Searchtoggle}
+                        key={item._id}
+                      >
+                        <ListGroupItem>{item.email}</ListGroupItem>
+                      </Link>
+                    );
+                  })}
+                </ListGroup>
+              </ModalBody>
+            </Modal>
           </Link>
         </NavItem>,
         <NavItem key="2">
@@ -126,34 +155,6 @@ const NavBar = (props) => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               {renderList()}
-              <Modal isOpen={modal} toggle={Searchtoggle}>
-                <ModalHeader toggle={Searchtoggle}>Search Users</ModalHeader>
-                <ModalBody>
-                  <input
-                    type="text"
-                    placeholder="User Search"
-                    required
-                    value={search}
-                    onChange={(e) => fetchUsers(e.target.value)}
-                  />
-                  <ListGroup>
-                    {userDetails.map((item) => {
-                      return (
-                        <Link
-                          to={
-                            item._id !== state.id
-                              ? "/profile/" + item._id
-                              : "/profile"
-                          }
-                          onClick={Searchtoggle}
-                        >
-                          <ListGroupItem>{item.email}</ListGroupItem>
-                        </Link>
-                      );
-                    })}
-                  </ListGroup>
-                </ModalBody>
-              </Modal>
             </Nav>
           </Collapse>
         </Container>
