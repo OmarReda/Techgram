@@ -70,6 +70,35 @@
 - Deploy app on heroku
 
 
+## Screens
+
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592236991/screens/1_ecp9wo.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592236992/screens/2_pa18jv.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592237018/screens/3_r20lyy.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592236999/screens/4_hrjyen.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592236999/screens/5_wyawde.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592237053/screens/6_visvwh.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592237002/screens/7_vlydcd.png">
+</p>
+<p align="center">
+  <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1592236996/screens/8_kf70ds.png">
+</p>
+
+
+
 ---
 ## Requirements
 
