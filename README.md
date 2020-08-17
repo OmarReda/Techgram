@@ -4,11 +4,13 @@
   <img src="https://res.cloudinary.com/djvh0aebv/image/upload/v1591356882/Capture_zb6zxr.png">
 </p>
 
-
+<div align="center">
+  
 ![NPM](https://img.shields.io/npm/v/npm)
 [![GitHub license](https://img.shields.io/github/license/OmarReda/Techgram)](https://github.com/OmarReda/Techgram/blob/master/LICENSE)
 ![Folow](https://img.shields.io/github/followers/OmarReda?label=Follow&style=social)
 
+</div>
 
 ## Introduction
 <p align="center">
